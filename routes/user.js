@@ -35,7 +35,7 @@ router.post('/register', async (req, res) => {
             //     message: "User already exits"
             // })
             
-            return new Error("Something went wrong");
+            return Error("Something went wrong");
         }
     
         const salt = await bcryptjs.genSalt(10);
