@@ -30,11 +30,10 @@ router.post('/register', async (req, res) => {
     try{
         const userExits = await User.findOne({email: email});
         if(userExits) {
-            // return res.status(409).json({
-            //     success: false,
-            //     message: "User already exits"
-            // })
-            return res.status(409).json({msg: "User already exits"})
+            return res.status(409).json({
+                success: false,
+                message: "User already exits"
+            })
         }
     
         const salt = await bcryptjs.genSalt(10);
