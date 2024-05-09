@@ -30,9 +30,12 @@ router.post('/register', async (req, res) => {
     try{
         const userExits = await User.findOne({email: email});
         if(userExits) {
-            return res.status(409).json({
-                success: false,
-                message: "User already exits"
+            // return res.status(409).json({
+            //     success: false,
+            //     message: "User already exits"
+            // })
+            return req.status(409).send({
+                message: 'User already exits'
             })
         }
     
