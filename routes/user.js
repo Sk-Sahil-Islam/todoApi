@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
         if(userExits) {
             return res.status(409).json({
                 success: false,
-                message: "User already exits"
+                message: "User already exist"
             })
         }
     
@@ -103,7 +103,7 @@ router.post('/login', async (req, res) => {
         }, (err, token) => {
             if(err) throw err;
             res.status(200).json({
-                status: true,
+                success: true,
                 message: 'Login successful',
                 token: token,
                 user: user
