@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/', auth, async(req, res, next) => {
     try {
-        const toDo = await Todo.create({ title: req.body.title, description: req.body.description, user: req.user.id});
+        const toDo = await Todo.create({ title: req.body.title, description: req.body.description, user: req.user.id, deadline: req.body.deadline});
         if(!toDo) {
             return res.status(400).json({
                 success: false,
