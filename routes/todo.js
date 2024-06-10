@@ -11,14 +11,14 @@ router.post('/', auth, async(req, res, next) => {
         if(!toDo) {
             return res.status(400).json({
                 success: false,
-                msg: 'Something went wrong'
+                message: 'Something went wrong'
             });
         }
 
         res.status(200).json({
             success: true,
             todo: toDo,
-            msg: 'Successfully created'
+            message: 'Successfully created'
         });
     } catch(error) {
         next(error)
