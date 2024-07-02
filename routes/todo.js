@@ -103,7 +103,7 @@ router.get('/finished', auth, async(req, res, next) => {
         if(!todo) {
             return res.status(400).json({
                 success: false,
-                message: "Some error happened"
+                message: "Some error occured"
             });
         }
         res.status(200).json({
