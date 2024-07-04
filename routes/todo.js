@@ -108,7 +108,7 @@ router.get('/finished', auth, async(req, res, next) => {
         }
         res.status(200).json({
             success: true,
-            message: "Completed todos fetched successfully",
+            message: "Fetched successfully",
             count: todo.length,
             todos: todo
         })
